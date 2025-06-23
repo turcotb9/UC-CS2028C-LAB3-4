@@ -1,24 +1,45 @@
 #include "TreeNode.h"
 #include <iostream>
 
+//Constructors
+
 TreeNode::TreeNode() {
-	leftNode
+	value = 0;
+	leftNode = nullptr;
+	rightNode = nullptr;
+}
+
+TreeNode::TreeNode(int val) {
+	value = val;
+	leftNode = nullptr;
+	rightNode = nullptr;
+}
+
+//Setter Functions
+
+void TreeNode::setValue(int val) {
+	value = val;
+}
+
+void TreeNode::setLeft(TreeNode* TN) {
+	leftNode = TN;
+}
+
+void TreeNode::setRight(TreeNode* TN) {
+	rightNode = TN;
 }
 
 
+//Getter Functions
 
-void TreeNode::setLeft() {
-
+int TreeNode::getValue() {
+	return value;
 }
 
-void TreeNode::setRight() {
-
+TreeNode* TreeNode::getLeftNode() {
+	return leftNode;
 }
 
-TreeNode* TreeNode::getLeft() {
-
-}
-
-TreeNode* TreeNode::getRight() {
-
+TreeNode* TreeNode::getRightNode() {
+	return rightNode;
 }

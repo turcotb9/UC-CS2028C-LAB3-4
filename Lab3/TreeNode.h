@@ -13,12 +13,12 @@ public:
 	TreeNode();
 	TreeNode(int val);
 
-	void setValue();
-	void setLeft();
-	void setRight();
+	void setValue(int val);
+	void setLeft(TreeNode* TN);
+	void setRight(TreeNode* TN);
 
 	int getValue();
-	TreeNode* getLeft();
-	TreeNode* getRight();
+	TreeNode* getLeftNode();
+	TreeNode* getRightNode();
 };
 
