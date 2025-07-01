@@ -15,6 +15,13 @@ private:
 	int Height(TreeNode* root);
 
 	TreeNode* Delete(TreeNode* root, int val);
+
+	//Traversals
+	int Inorder(TreeNode* root);
+	int Preorder(TreeNode* root);
+	int Postorder(TreeNode* root);
+	int Levelorder(TreeNode* root);
+
 public:
 	BST();
 
@@ -28,7 +35,10 @@ public:
 
 	TreeNode* Delete(int val);
 
-
-
+	//Traversal
+	void Inorder();
+	void Preorder();
+	void Postorder();
+	void Levelorder();
 };
 

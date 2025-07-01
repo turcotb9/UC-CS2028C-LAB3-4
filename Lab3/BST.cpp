@@ -81,13 +81,15 @@ int BST::Height(TreeNode* root) {
 		return (max + 1);
 	}
 }
+
+
 //Public
 int BST::Height() {
 	return Height(root);
 }
 
 //Private
-TreeNode* Delete(TreeNode* root, int val) {
+TreeNode* BST::Delete(TreeNode* root, int val) {
 
 	if (root == nullptr) {
 		return root;
@@ -134,4 +136,43 @@ TreeNode* Delete(TreeNode* root, int val) {
 //Public
 TreeNode* BST::Delete(int val) {
 	return Delete(root, val);
+}
+
+
+
+
+
+//Traversals
+
+int BST::Inorder(TreeNode* root) {
+	std::cout << Inorder(root->getLeftNode()) << ", ";
+	std::cout << root->getValue() << ", ";
+	std::cout << Inorder(root->getRightNode()) << ", ";
+	return root->getValue();
+}
+
+void BST::Inorder() {
+	Inorder(root);
+}
+
+int BST::Preorder(TreeNode* root) {
+	std::cout << root->getValue() << ", ";
+	std::cout << Inorder(root->getLeftNode()) << ", ";
+	std::cout << Inorder(root->getRightNode()) << ", ";
+	return root->getValue();
+}
+
+void BST::Preorder() {
+	Preorder(root);
+}
+
+int BST::Postorder(TreeNode* root) {
+	std::cout << Inorder(root->getLeftNode()) << ", ";
+	std::cout << Inorder(root->getRightNode()) << ", ";
+	std::cout << root->getValue() << ", ";
+	return root->getValue();
+}
+
+void BST::Postorder() {
+	Postorder(root);
 }
