@@ -1,5 +1,6 @@
 #include "BST.h"
 #include <iostream>
+#include <queue>
 
 BST::BST() {
 	root = nullptr;
@@ -153,6 +154,7 @@ int BST::Inorder(TreeNode* root) {
 
 void BST::Inorder() {
 	Inorder(root);
+	std::cout << "\n";
 }
 
 int BST::Preorder(TreeNode* root) {
@@ -164,6 +166,7 @@ int BST::Preorder(TreeNode* root) {
 
 void BST::Preorder() {
 	Preorder(root);
+	std::cout << "\n";
 }
 
 int BST::Postorder(TreeNode* root) {
@@ -175,4 +178,24 @@ int BST::Postorder(TreeNode* root) {
 
 void BST::Postorder() {
 	Postorder(root);
+	std::cout << "\n";
+}
+//Private
+void BST::Levelorder(TreeNode* root) {
+	std::queue<TreeNode*> Queue;
+	Queue.push(root);
+	while (Queue.empty() != true) {
+		TreeNode* temp = Queue.front();
+		if (temp != nullptr) {
+			Queue.push(temp->getLeftNode());
+			Queue.push(temp->getRightNode());
+			std::cout << temp->getValue() << ", ";
+		}
+		Queue.pop();
+	}
+	std::cout << "\n";
+}
+//Public
+void BST::Levelorder() {
+	Levelorder(root);
 }

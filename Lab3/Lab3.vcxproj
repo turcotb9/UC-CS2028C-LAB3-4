@@ -130,11 +130,13 @@
   <ItemGroup>
     <ClInclude Include="BST.h" />
     <ClInclude Include="BSTArray.h" />
+    <ClInclude Include="DynamicArray.h" />
     <ClInclude Include="TreeNode.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BST.cpp" />
     <ClCompile Include="BSTArray.cpp" />
+    <ClCompile Include="DynamicArray.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="TreeNode.cpp" />
   </ItemGroup>

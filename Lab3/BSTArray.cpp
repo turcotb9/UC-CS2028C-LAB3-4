@@ -2,15 +2,15 @@
 #include <iostream>
 
 int BSTArray::Insert(int index, int value) {
-	if (array[index] = NULL) {
-		array[index] = value;
+	if (array.get(index) == NULL) {
+		array.add(value);
 		return value;
 	}
 
-	if (value > array[index]) {
+	if (value > array.get(index)) {
 		return Insert(((2 * index) + 2), value);
 	}
-	if (value < array[index]) {
+	if (value < array.get(index)) {
 		return Insert(((2 * index) + 1), value);
 	}
 }
@@ -24,17 +24,17 @@ void BSTArray::Insert(int value) {
 
 int BSTArray::Search(int index, int value) {
 	
-	if (index > size) {
+	if (index > array.getLength()) {
 		return -1;
 	}
 
-	if (value == array[index]) {
+	if (value == array.get(index)) {
 		return index;
 	}
-	if (value > array[index]) {
+	if (value > array.get(index)) {
 		return Search(((2 * index) + 2), value);
 	}
-	if (value < array[index]) {
+	if (value < array.get(index)) {
 		return Search(((2 * index) + 1), value);
 	}
 }
@@ -52,13 +52,13 @@ void BSTArray::Search(int value) {
 
 //Traversals
 int BSTArray::Inorder(int index) {
-	if (index > size) {
+	if (index > array.getLength()) {
 		return -1;
 	}
 	std::cout << Inorder(2 * index + 1) << ", ";
-	std::cout << array[index] << ", ";
+	std::cout << array.get(index) << ", ";
 	std::cout << Inorder(2 * index + 2) << ", ";
-	return array[index];
+	return array.get(index);
 }
 
 void BSTArray::Inorder() {
@@ -68,13 +68,13 @@ void BSTArray::Inorder() {
 
 
 int BSTArray::Preorder(int index) {
-	if (index > size) {
+	if (index > array.getLength()) {
 		return -1;
 	}
-	std::cout << array[index] << ", ";
+	std::cout << array.get(index) << ", ";
 	std::cout << Inorder(2 * index + 1) << ", ";
 	std::cout << Inorder(2 * index + 2) << ", ";
-	return array[index];
+	return array.get(index);
 }
 
 void BSTArray::Preorder() {
@@ -82,13 +82,13 @@ void BSTArray::Preorder() {
 }
 
 int BSTArray::Postorder(int index) {
-	if (index > size) {
+	if (index > array.getLength()) {
 		return -1;
 	}
 	std::cout << Inorder(2 * index + 1) << ", ";
 	std::cout << Inorder(2 * index + 2) << ", ";
-	std::cout << array[index] << ", ";
-	return array[index];
+	std::cout << array.get(index) << ", ";
+	return array.get(index);
 }
 
 void BSTArray::Postorder() {
@@ -96,5 +96,8 @@ void BSTArray::Postorder() {
 }
 
 void BSTArray::Levelorder() {
-	std::cout << array << "\n";
+	for (int i = 0; i < array.getLength(); i++) {
+		std::cout << array.get(i) << ", ";
+	}
+	std::cout << "\n";
 }

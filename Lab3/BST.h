@@ -20,7 +20,7 @@ private:
 	int Inorder(TreeNode* root);
 	int Preorder(TreeNode* root);
 	int Postorder(TreeNode* root);
-	int Levelorder(TreeNode* root);
+	void Levelorder(TreeNode* root);
 
 public:
 	BST();

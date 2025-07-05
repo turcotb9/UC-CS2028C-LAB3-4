@@ -1,10 +1,10 @@
 #pragma once
 #include <iostream>
+#include "DynamicArray.h"
 class BSTArray {
 private:
-	int size = 100;
 	int index = 0;
-	int array[100];
+	DynamicArray array;
 	
 
 	int Insert(int index, int value);
